@@ -1,0 +1,75 @@
+
+h1 {
+    color: #555 ;
+    font-style: inherit;
+    font-weight: inherit;
+    font-size:25px;
+    text-align: center;
+    padding-top:10px;
+}
+
+p {
+
+    color: #555 ;
+    font-style: inherit;
+    font-weight: inherit;
+    font-size:15px;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: justify;
+    padding-bottom: 10px;
+
+}
+.myimg{
+  padding-top: 30px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.navbar a {
+  color: #555;
+
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  color: #333;
+}
+.card-outline {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.form-control {
+            border-color: #A9A9A9;
+
+}
+.card-header {
+            background-color: #FFFFFF;
+
+}
+.card-footer {
+            background-color: #FFFFFF;
+}
+table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            border: 1px solid #696969;
+            padding: 8px;
+            text-align: center;
+            color: #555 ;
+            font-style: inherit;
+            font-weight: bold;
+            font-size:15px;
+        }
+         td {
+            border: 1px solid #696969;
+            padding: 8px;
+            text-align: center;
+            color: #555 ;
+            font-style: inherit;
+            font-weight: inherit;
+        }
+

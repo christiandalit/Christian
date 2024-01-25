@@ -1,0 +1,41 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+                    <div class="card card-outline card-primary shadow rounded-0">
+        <div class="card-header">
+            <h1 class="card-title">Student Form</h1>
+        </div>
+                <form method="post" action="">
+                    {{form}}
+                    {% csrf_token %}
+
+                    <div class="card-footer text-center">
+                        <button class="btn btn-flat btn-primary btn-sm" type="submit">Save</button>
+                        <a href="{% url 'EnterNew' %}" class="btn btn-flat btn-default border btn-sm">Cancel</a>
+                    </div>
+                </form>
+                    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

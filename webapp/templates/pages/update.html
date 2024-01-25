@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+{% include 'pages/navbar.html' %}
+<br>
+<br>
+<div class="content py-3">
+    <div class="card card-outline card-primary shadow rounded-0">
+        <div class="card-header">
+            <h1 class="card-title">Student Form</h1>
+        </div>
+        <div class="card-body">
+            <div class="container-fluid">
+                <form action="" method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    <div class="row">
+
+                        <div class="form-group col-md-4">
+                            <label for="studentnumber" class="control-label">Student Number</label>
+                            <input type="text" name="studentnumber" id="studentnumber" value="{{ form.studentnumber.value }}" autofocus class="form-control form-control-sm rounded-0" required>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="course" class="control-label">Course</label>
+                            <select name="course" id="course" class="form-control form-control-sm rounded-0" >
+                                    <option value="{{ form.course}}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="section" class="control-label">Section</label>
+                            <select name="section" id="section" class="form-control form-control-sm rounded-0" >
+
+                                    <option value="{{ form.section}}"></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <fieldset class="border-bottom">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="firstname" class="control-label">First Name</label>
+                                <input type="text" name="firstname" id="firstname" value="{{ form.firstname.value }}" class="form-control form-control-sm rounded-0" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="middlename" class="control-label">Middle Name</label>
+                                <input type="text" name="middlename" id="middlename" value="{{ form.middlename.value }}" class="form-control form-control-sm rounded-0" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="lastname" class="control-label">Last Name</label>
+                                <input type="text" name="lastname" id="lastname" value="{{ form.lastname.value }}" autofocus class="form-control form-control-sm rounded-0" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="gender" class="control-label">Gender</label>
+                                <select name="gender" id="gender" class="form-control form-control-sm rounded-0" required>
+                                     <option value="{{ form.gender}}"></option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="yearlevel" class="control-label">YearLevel</label>
+                                <select name="yearlevel" id="yearlevel" class="form-control form-control-sm rounded-0" required>
+                                    <option value="{{ form.level}}"></option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="contact" class="control-label">Contact #</label>
+                                <input type="text" name="contact" id="contact" value="{{ form.contact.value }}" class="form-control form-control-sm rounded-0" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="address" class="control-label">Address</label>
+                                <textarea rows="3" name="address" id="address"  class="form-control form-control-sm rounded-0" required>{{ form.address.value }}</textarea>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <div class="card-footer text-center">
+                        <button class="btn btn-flat btn-primary btn-sm" type="submit">Save</button>
+                        <a href="{% url 'Update' %}" class="btn btn-flat btn-default border btn-sm">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'pages/footer.html' %}
+</body>
+</html>

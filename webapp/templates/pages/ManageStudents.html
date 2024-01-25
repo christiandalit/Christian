@@ -1,0 +1,62 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="content py-3">
+    <div class="card card-outline card-primary shadow rounded-0">
+        <div class="card-header">
+            <h1 class="card-title">Manage Student Record</h1>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Student Number</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Course</th>
+                        <th>Section</th>
+                        <th>YearLevel</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                 {% for student in students %}
+                    <tr>
+                  <td>{{ student.id }}</td>
+                 <td>{{ student.studentnumber }}</td>
+                <td>{{ student.firstname }}</td>
+                <td>{{ student.middlename }}</td>
+                <td>{{ student.lastname }}</td>
+                <td>{{ student.gender }}</td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.section }}</td>
+                <td>{{ student.level }}</td>
+                <td>{{ student.contact }}</td>
+                <td>{{ student.address }}</td>
+
+                <td>
+                    <a href="{% url 'update_student' student.id %}">Update</a>
+                     <a href="{% url 'delete_student' student.id %}">Delete</a>
+
+                            </td>
+                    </tr>
+                  {% endfor %}
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
